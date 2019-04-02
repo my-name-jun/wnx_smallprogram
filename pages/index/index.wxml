@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class='top_bg'>
+  <view class='title'>历史年化结算利率</view>
+  <text class='percentage'>5.50<text class='percent'>%</text></text>
+</view>
+<view class='explain'>保底收益 | 中长期首选 | 已预约
+  <text>3999</text>人</view>
+<view class='submit_button' bindtap='modalAn'>预约咨询</view>
+<view class='button_explain'>最低保证利率为3%，超过保证利率部分不保证</view>
+<view class='content_title'>和聚宝历史年化利率走势</view>
+<view class='content_image'></view>
+<view class='confirm_introduction'>公司介绍</view>
+<text class='introduction_content'>招商仁和人寿，由招商局、中国移动等共同发起
+设立，注册资本50亿，源自1875年民族保险品牌</text>
+<view class='footer_icon'></view>
+<view class='footer_icon1'></view>
+
+<!-- 弹窗 -->
+<view class='modal' style='display:{{play}}' bindtap='modalHidden'></view>
+  <view class='myModal' bindtap='modalAn' style='display:{{play}}'>
+    <input placeholder='请输入您的姓名' type='text' class='name' style='margin-top:0;'></input>
+    <view class='line1'></view>
+    <input placeholder='请输入联系方式' type='text' class='name'></input>
+    <text class='code'>发送验证码</text>
+    <view class='line1'></view>
+    <input placeholder='请输入验证码' type='text' class='name'></input>
+    <view class='line1'></view>
+    <input placeholder='回电时间要求' disabled='true' type='text' class='name'></input>
+
+    <view class="section">
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"            value="{{multiIndex}}" range="{{multiArray}}">
+        <view class="picker">
+          {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}-{{multiArray[2][multiIndex[2]]}} >
+        </view>
+      </picker>
+    </view>
+
+    <view class='line1'></view>
+
+    <view class='submit' bindtap='submit'>确定预约</view>
+  </view>
